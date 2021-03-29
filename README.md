@@ -80,6 +80,10 @@ We can recommend Steve to look into investing in ENPH, why? In 2017 this stock s
 
 By refactoring our code and altering it to make the VBA script to run faster we find that in 2017 the code ran in 0.1367188 secods, in comparison to the initial 0.140625 seconds. Meanwhile, in 2018 the refactored code ran in 0.1367188, in contrast to the early findings of 0.691406. We observed that by using adding the ‘tickerIndex’ as a variable we make little impact on the 2017 code performance. Although for 2018 there’s a significant increase in performance. Overall refactoring the data seems to be cleaned up our code and make it more efficient.
 
+![Refactored Code Performance for 2017](https://github.com/cynmmarin/Stock-Analysis/blob/35bc6b79109e4700ac5b216b0752b717bcba2366/Refactored_Code_Performance_for_2017.png)
+
+![Refactored Code Performance for 2018](https://github.com/cynmmarin/Stock-Analysis/blob/35bc6b79109e4700ac5b216b0752b717bcba2366/Refactored_Code_Performance_for_2017.png)
+
 ## Summary
 ### Advantages of Refactored VBA Script
 
