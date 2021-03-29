@@ -26,6 +26,8 @@ Next, we want to define our variables and assigning them a data type on VBA. We 
 
 Let’s create some loops, which are our way of telling the program to repeat lines of code, for certain number of times. Creating the loops will guarantee that the code we write will be applied to the data we need. For this we need to start by activating the ‘yearValue’ worksheet first, and then find the number of rows to loop over. We will be using the RowCount function. We want the loop through the tickers from i=0 to 11 and we want the ticker= tickers(i). Remember, we need to find out what is the ‘Total Daily Volume’, so let’s create a ‘totalVolume’ variable to go inside the loop and set totalVolume=0. 
 
+![Creating Loops](https://github.com/cynmmarin/Stock-Analysis/blob/2ddcb1572cfdf43d599ed3cac74ef7d723c3c319/Creating_Loops.png)
+
 ### Nested Loops
 
 Now, let’s create some nested loops, this is when we have a loop inside another loop. This is necessary to be able to go through the arrays. First, we’re going to find the total volume for the current ticker, then fine the starting price and then ending price for the current ticker. In order to create this code, we will keep in mind conditional statements. Conditionals are expression we write, to check if a condition is true or false. *If* the condition is true, *Then* a block of code will run until it hit the *End If*. When the condition is false, the code will not run. Let’s go over all three conditions. In the following conditionals we evaluate the statement ‘For j=2 to Rowcount’
@@ -33,9 +35,15 @@ Now, let’s create some nested loops, this is when we have a loop inside anothe
 ### Conditional for Total Volume
 In order to find the total volume for the current ticker, the condition state that *If* Cells(j,1) equal the ticker, *Then* the totalVolume = totalVolume (which we had set to zero) plus the Cell(j,8). In other words, if the statement is true, we will be looping through the defined data to find out the total volume of transactions each stock had. By going through each ticker on row ‘A’ and adding all the daily volume of transactions on column ‘H’ (which is why we use 8) for that given year. 
 
+![Conditional for Total Volume](https://github.com/cynmmarin/Stock-Analysis/blob/517c4195c41297fd5ae024936924c98a93e307ca/Conditional_for_Total_Volume.png)
+
 ### Conditional for Starting and Ending Price
 
 Keeping the same logic as previously explained. If the earlier conditional is false (<>), then we will go an evaluate the ‘Start Price’ and *End If*. Lastly, if the prior conditional is false, we will go ahead and evaluate the ‘Ending Price’ and *End If*. Once all conditions have been coded, we can go ahead and code for where to output the data of the current ticker should go. 
+
+![Conditional for Starting Price](https://github.com/cynmmarin/Stock-Analysis/blob/517c4195c41297fd5ae024936924c98a93e307ca/Conditional_for_Starting_Price.png)
+
+![Conditional for Ending Price](https://github.com/cynmmarin/Stock-Analysis/blob/517c4195c41297fd5ae024936924c98a93e307ca/Conditional_for_Ending_Price.png)
 
 ### Formatting and Conditional Formatting
 
@@ -49,14 +57,22 @@ In order for Steve to be able to navigate our analysis without having to rely on
 
 Measuring our code performance will allow Steve to understand how long it will take for VBA to perform the code and give him an output of our results. For this we will use the ‘Timer’ function and analyze the ‘starTime’ and the ‘endTime’. Once we run this code, we will have the results be displayed in a message box and thus allow Steve to understand the speed at which VBA process results. We find that for 2017 the code ran in 0.140625 seconds. Meanwhile, for 2018 the code ran 0.691406.   This feature will help give him an understanding of how much longer it will take him to run larger datasets. 
 
+![Measuring Code Performance for 2017](https://github.com/cynmmarin/Stock-Analysis/blob/92dc95764b4ca3c9b1b9c7ce1db6c1f69f6a3fd8/Measuring%20Code%20Performance%202017.png)
+
+![Measuring Code Performance for 2018](https://github.com/cynmmarin/Stock-Analysis/blob/92dc95764b4ca3c9b1b9c7ce1db6c1f69f6a3fd8/Measuring%20Code%20Performance%202018.png)
+
 ## Results
 ### Findings for 2017
 
 Now that we have ran our code and see that it works, lets evaluate our findings. In 2017 we see that the rate of ‘Return’ for the DQ stock is at 199.4% with a ‘Total Daily Volume’ of 35,796,200. Making it the stock with the highest return of all 12 stocks. In this case the overall activity in its trading volume is lowest of all stocks. Meaning is does not get traded as often as a stock such as SPWR with the highest return of all green energy stocks, with a 782,187,000 ‘Total Daily Volume’. What does this say about the stock? There are a few things we can conclude, DQ may not be a well-known stock in the green energy market and thus does not have a high daily volume trading. This makes it a bit risky to invest in a stock given that it is not appealing for investors. It can potentially lack liquidity, making it a great stock to invest short term, but not in the long term.
 
+![VBA Challenge 2017](https://github.com/cynmmarin/Stock-Analysis/blob/832b0ebabbf1add966ecd45956e9b21e50b12944/VBA_Challenge_2017.png)
+
 ### Findings for 2018
 
 In 2018 we see that as predicted DQ’s returns go down, reaching a low of -62.6%. This is concerning and reflects that the DQ stock is volatile. Long term investment is highly risky and will result in unprofitable investment. The ‘Total Daily Volume’ decreases to 107,873,900 from the 782,187,00 from 2017. Therefore, we can confidently explain to Steve that DQ is not a stock he should advice his parents to invest all their funds, as they will experience a lost. Alternatively, we can recommend he advices his parent to look into ENPH stock if they wish to continue to invest in green energy. 
+
+![VBA Challenge 2018](https://github.com/cynmmarin/Stock-Analysis/blob/832b0ebabbf1add966ecd45956e9b21e50b12944/VBA_Challenge_2018.png)
 
 We can recommend Steve to look into investing in ENPH, why? In 2017 this stock saw a positive return of 129.5% with a ‘Total Daily Volume’ of 221,772,100 trades. Although is not the highest in 2017, it continues to be profitable in 2018, with a positive ‘Return’ of 81.9% and a ‘Total Daily Volume’ of trades of 607,473,500. We observe that of all 12 stocks, ENPH is one of two stocks that continue having a positive return in in 2018. Therefore, we can encourage Steve to inform his parents of our findings and suggest they consider investing in ENPH and not DQ.
 
